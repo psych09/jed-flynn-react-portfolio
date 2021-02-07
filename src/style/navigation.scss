@@ -3,6 +3,21 @@
     justify-content: space-between;
     padding: 20px;
 
+    .right-side {
+        font-weight: 600;
+        font-size: 1.1em;
+        
+        a {
+            margin-left: 15px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                color: $dark-teal;
+            }
+        }
+    }
+
     .left-side {
         display: flex;
     }
@@ -32,9 +47,5 @@
         &:hover {
             border-bottom: 1px solid black;
         }
-    }
-
-    .right-side {
-        font-weight: 600;
     }
 }
