@@ -8,7 +8,14 @@
         margin-bottom: 0px;
     }
 
+   .btn {
+       width: 100px;
+       transition: 0.3s, ease-in-out;
+   }
+
     .image-uploaders {
+        height: 240px;
+
         .dz-clickable {
             height: 200px;
         }
