@@ -9,6 +9,7 @@ import { faSignOutAlt } from "@fortawesome/pro-duotone-svg-icons"
 
 import Home from './pages/home'
 import Blog from './pages/blog'
+import BlogDetail from './pages/blog-detail'
 import About from './pages/about'
 import Contact from './pages/contact'
 import NavigationContainer from "./navigation/navigation-container"
@@ -111,6 +112,7 @@ export default class App extends Component {
                             <Route path="/about" component={About} />
                             <Route path="/contact" component={Contact} />
                             <Route path="/blog" component={Blog} />
+                            <Route path="/b/:slug" component={BlogDetail} />
                             <Route path="/portfolio/:slug" component={PortfolioDetail} />
                             {this.state.loggedInStatus === "LOGGED_IN" ? this.authorizedPages() : null}
                             <Route component={NoMatch} />
