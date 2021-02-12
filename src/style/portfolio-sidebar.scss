@@ -1,4 +1,7 @@
 .portfolio-sidebar-list-wrapper {
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+
     .portfolio-item-thumb {
         padding: 21px;
 
