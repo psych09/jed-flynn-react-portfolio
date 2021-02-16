@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTrash, faEdit } from "@fortawesome/pro-solid-svg-icons"
-import { faMinusSquare, faCog } from "@fortawesome/pro-regular-svg-icons"
-import { faSignOutAlt } from "@fortawesome/pro-duotone-svg-icons"
 
 import Home from './pages/home'
 import Blog from './pages/blog'
@@ -17,12 +12,14 @@ import PortfolioDetail from "./portfolio/portfolio-detail"
 import PortfolioManager from "./pages/portfolio-manager"
 import Auth from "./pages/auth"
 import NoMatch from "./pages/no-match"
+import Icons from '../helpers/icons'
 
-library.add(faTrash, faMinusSquare, faSignOutAlt, faEdit, faCog)
 
 export default class App extends Component {
     constructor(props) {
         super(props)
+
+        Icons()
 
         this.state = {
             loggedInStatus: "NOT_LOGGED_IN"
@@ -111,7 +108,12 @@ export default class App extends Component {
                             />
                             <Route path="/about" component={About} />
                             <Route path="/contact" component={Contact} />
-                            <Route path="/blog" component={Blog} />
+                            <Route
+                                path="/blog"
+                                render={props => (
+                                    <Blog {...props} loggedInStatus={this.state.loggedInStatus} />
+                                )}
+                            />
                             <Route path="/b/:slug" component={BlogDetail} />
                             <Route path="/portfolio/:slug" component={PortfolioDetail} />
                             {this.state.loggedInStatus === "LOGGED_IN" ? this.authorizedPages() : null}

@@ -21,6 +21,14 @@ export default class Blog extends Component {
         window.addEventListener('scroll', this.onScroll, false)
         this.handleNewBlogClick = this.handleNewBlogClick.bind(this)
         this.handleModalClose = this.handleModalClose.bind(this)
+        this.handleSuccessfulNewBlogSubmission = this.handleSuccessfulNewBlogSubmission.bind(this)
+    }
+
+    handleSuccessfulNewBlogSubmission(blog) {
+        this.setState({
+            blogModalIsOpen: false,
+            blogItems: [blog].concat(this.state.blogItems)
+        })
     }
 
     handleNewBlogClick() {
@@ -55,7 +63,6 @@ export default class Blog extends Component {
             { withCredentials: true }
         )
         .then(response => {
-            console.log("getting", response.data)
             this.setState({
                 blogItems: this.state.blogItems.concat(response.data.portfolio_blogs),
                 totalCount: response.data.meta.total_records,
@@ -83,19 +90,23 @@ export default class Blog extends Component {
         return (
             <div className="blog-container">
                 <BlogModal 
+                    handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
                     blogModalIsOpen={this.state.blogModalIsOpen}
                     handleModalClose={this.handleModalClose}
                 />
 
-                <div className="new-blog-link">
-                    <a onClick={this.handleNewBlogClick}>
-                        Open Modal!
-                    </a>
-                </div>
+                {this.props.loggedInStatus === "LOGGED_IN" ? (
+                    <div className="new-blog-link">
+                        <a onClick={this.handleNewBlogClick}>
+                            <FontAwesomeIcon icon={['far', 'plus-square']} />
+                        </a>
+                    </div>
+                ) : null}
 
                 <div className="content-container">
                     {blogRecords}
                 </div>
+
                 {this.state.isLoading ? (
                     <div className="content-loader">
                         <FontAwesomeIcon icon={['far', 'cog']} spin />
