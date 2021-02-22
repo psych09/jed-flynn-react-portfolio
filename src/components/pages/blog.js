@@ -89,7 +89,7 @@ export default class Blog extends Component {
 
         return (
             <div className="blog-container">
-                <BlogModal 
+                <BlogModal
                     handleSuccessfulNewBlogSubmission={this.handleSuccessfulNewBlogSubmission}
                     blogModalIsOpen={this.state.blogModalIsOpen}
                     handleModalClose={this.handleModalClose}
