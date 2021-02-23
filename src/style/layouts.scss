@@ -1,0 +1,51 @@
+.content-page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: calc(100vh - 65px);
+
+    .content-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $offwhite;
+        padding: 100px;
+
+        .contact-bullet-points {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 21px;
+
+            .bullet-point-group {
+                display: flex;
+                align-items: center;
+
+                .fa-icon {
+                    font-size: 2em;
+                    opacity: 0.6;
+                }
+    
+                .text {
+                    font-size: 1.5em;
+                    font-weight: 900;
+                    margin-left: 21px;
+                }
+            }
+
+        }
+
+        .about-icons {
+            margin-top: 40px;
+
+            .fa-icon {
+                font-size: 2em;
+                opacity: 0.7;
+                margin: 15px;
+            }
+        }
+    }
+
+    .image-column {
+        background-size: cover;
+    }
+}
