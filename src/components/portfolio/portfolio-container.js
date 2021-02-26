@@ -9,7 +9,6 @@ export default class PortfolioContainer extends Component {
         super()
 
         this.state = {
-            pageTitle: "Welcome to my portfolio",
             isLoading: false,
             data: []   
         }
@@ -29,11 +28,11 @@ export default class PortfolioContainer extends Component {
         })
     }
 
-    portfolioItems() {
-        return this.state.data.map(item => {
-            return <PortfolioItem key={item.id} item={item} />
-        })
-    }
+    // portfolioItems() {
+    //     return this.state.data.map(item => {
+    //         return <PortfolioItem key={item.id} item={item} />
+    //     })
+    // }
 
     componentDidMount() {
         this.getPortfolioItems()
@@ -48,6 +47,9 @@ export default class PortfolioContainer extends Component {
     }
 
     render() {
+        const portfolioItems = this.state.data.map(item => {
+            return <PortfolioItem key={item.id} item={item} />
+        })
 
         if (this.state.isLoading) {
             return <div>Loading...</div>
@@ -59,7 +61,7 @@ export default class PortfolioContainer extends Component {
                 <button className="btn" onClick={() => this.handleFilter('Scheduling')}>Scheduling</button>
                 <button className="btn" onClick={() => this.handleFilter('Enterprise')}>Enterprise</button>
 
-                {this.portfolioItems()}
+                {portfolioItems}
             </div>
         )
     }

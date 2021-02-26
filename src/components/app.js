@@ -3,16 +3,16 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 
 import Home from './pages/home'
+import Auth from './pages/auth'
 import Blog from './pages/blog'
-import BlogDetail from './pages/blog-detail'
 import About from './pages/about'
-import Contact from './pages/contact'
-import NavigationContainer from "./navigation/navigation-container"
-import PortfolioDetail from "./portfolio/portfolio-detail"
-import PortfolioManager from "./pages/portfolio-manager"
-import Auth from "./pages/auth"
-import NoMatch from "./pages/no-match"
 import Icons from '../helpers/icons'
+import Contact from './pages/contact'
+import NoMatch from "./pages/no-match"
+import BlogDetail from '../components/blog/blog-detail'
+import PortfolioManager from './pages/portfolio-manager'
+import PortfolioDetail from './portfolio/portfolio-detail'
+import NavigationContainer from './navigation/navigation-container'
 
 
 export default class App extends Component {

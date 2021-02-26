@@ -3,7 +3,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSignOutAlt } from "@fortawesome/pro-duotone-svg-icons"
-import { faTrash, faEdit, faMapMarkedAlt } from "@fortawesome/pro-solid-svg-icons"
+import { faTrash, faEdit, faMapMarkerAlt } from "@fortawesome/pro-solid-svg-icons"
 import { faMinusSquare, faCog, faPlusSquare, faEnvelopeSquare } from "@fortawesome/pro-regular-svg-icons"
 
 const Icons = () => {
@@ -15,7 +15,7 @@ const Icons = () => {
         faCog,
         faPlusSquare,
         faEnvelopeSquare,
-        faMapMarkedAlt,
+        faMapMarkerAlt,
         fab
     )
 }

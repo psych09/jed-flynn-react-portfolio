@@ -19,16 +19,31 @@
             .bullet-point-group {
                 display: flex;
                 align-items: center;
-
-                .fa-icon {
-                    font-size: 2em;
-                    opacity: 0.6;
+                text-decoration: none;
+                color: black;
+                transition: 0.3s ease-in-out;
+                
+                .icon-wrapper {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .fa-icon {
+                        font-size: 2em;
+                        opacity: 0.6;
+                    }
                 }
     
                 .text {
                     font-size: 1.5em;
                     font-weight: 900;
                     margin-left: 21px;
+                }
+
+                &:hover {
+                    color: $teal;
                 }
             }
 

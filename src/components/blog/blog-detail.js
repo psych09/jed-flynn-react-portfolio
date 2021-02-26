@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import ReactHtmlParser from 'react-html-parser'
 
-import BlogForm from '../blog/blog-form'
-import BlogFeaturedImage from '../blog/blog-featured-image'
+import BlogForm from './blog-form'
+import BlogFeaturedImage from './blog-featured-image'
 
 export default class BlogDetail extends Component {
     constructor(props) {

@@ -24,10 +24,10 @@ export default function() {
                 <div className="about-icons">
                     <FontAwesomeIcon className="fa-icon" icon={['fab', 'html5']} />
                     <FontAwesomeIcon className="fa-icon" icon={['fab', 'css3-alt']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'git-alt']} />
                     <FontAwesomeIcon className="fa-icon" icon={['fab', 'js']} />
                     <FontAwesomeIcon className="fa-icon" icon={['fab', 'react']} />
                     <FontAwesomeIcon className="fa-icon" icon={['fab', 'python']} />
+                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'git-alt']} />
                     <FontAwesomeIcon className="fa-icon" icon={['fab', 'font-awesome-alt']} />
                     <FontAwesomeIcon className="fa-icon" icon={['fab', 'invision']} />
                 </div>
