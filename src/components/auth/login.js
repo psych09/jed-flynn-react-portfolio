@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default class Login extends Component {
     constructor(props) {
@@ -58,24 +59,30 @@ export default class Login extends Component {
 
                 <div>{this.state.errorText}</div>
 
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                    />
+                <form onSubmit={this.handleSubmit} className="auth-form-wrapper">
+                    <div className="form-group">
+                        <FontAwesomeIcon className="fa-icon" icon={['far', 'envelope']} />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                        />
+                    </div>
 
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                    />
+                    <div className="form-group">
+                        <FontAwesomeIcon className="fa-icon" icon={['far', 'lock']} />
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
+                    </div>
 
-                    <button type="submit">Login</button>
+                    <button className="btn" type="submit">Login</button>
                 </form>
             </div>
         )
