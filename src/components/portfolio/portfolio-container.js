@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import axios from 'axios'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 
 import PortfolioItem from './portfolio-item'
@@ -9,7 +10,7 @@ export default class PortfolioContainer extends Component {
         super()
 
         this.state = {
-            isLoading: false,
+            isLoading: true,
             data: []   
         }
     
@@ -34,6 +35,7 @@ export default class PortfolioContainer extends Component {
                     data: res.data.portfolio_items
                 })
             }
+            this.setState({ isLoading: false })
         })
         .catch(err => {
             console.log(err);
@@ -53,10 +55,6 @@ export default class PortfolioContainer extends Component {
             return <PortfolioItem key={item.id} item={item} />
         })
 
-        if (this.state.isLoading) {
-            return <div>Loading...</div>
-        }
-
         return(
             <div className="homepage-wrapper">
                 <div className="filter-links">
@@ -65,6 +63,12 @@ export default class PortfolioContainer extends Component {
                     <button className="btn" onClick={() => this.handleFilter('Enterprise')}>Enterprise</button>
                     <button className="btn" onClick={() => this.handleFilter('CLEAR_FILTERS')}>All</button>
                 </div>
+                {this.state.isLoading ?
+                    <div className="content-loader">
+                        <FontAwesomeIcon icon={['far', 'cog']} spin />
+                    </div>
+                    : null
+                }
                 <div className="portfolio-items-wrapper">
                     {portfolioItems}
                 </div>
