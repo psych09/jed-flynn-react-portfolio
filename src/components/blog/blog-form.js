@@ -157,13 +157,24 @@ export default class BlogForm extends Component {
                         value={this.state.title}
                     />
 
-                    <input
-                        type="text" 
-                        onChange={this.handleChange}
+                    {/* <input
                         name="blog_status"
-                        placeholder="Blog Status"
                         value={this.state.blog_status}
-                    />
+                        onChange={this.handleChange}
+                        placeholder="Blog Status"
+                        type="text" 
+                    /> */}
+
+                    <select
+                        name="blog_status"
+                        value={this.state.blog_status}
+                        onChange={this.handleChange}
+                        className="select-area"
+                    >
+                        <option value="" disabled>Blog Status</option>
+                        <option value="published">Published</option>
+                        <option value="draft">Draft</option>
+                    </select>
                 </div>
 
                 <div className="one-column">
@@ -177,7 +188,7 @@ export default class BlogForm extends Component {
                 <div className="image-uploaders">
                     {this.props.editMode && this.props.blog.featured_image_url ? (
                         <div className="portfolio-manager-image-wrapper">
-                            <img src={this.props.blog.featured_image_url}></img>
+                            <img src={this.props.blog.featured_image_url} className="dz-image" />
                             <div className="image-removal-link">
                                 <a onClick= {() => this.deleteImage("featured_image")}>
                                     <FontAwesomeIcon icon={["far", "minus-square"]} />

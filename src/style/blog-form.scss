@@ -9,7 +9,31 @@
     }
 
     .image-uploaders {
-        @include base-grid();
-        grid-template-columns: 200px;
+        height: 240px;
+        width: 300px;
+
+        .dz-clickable {
+            height: 200px;
+        }
+    }
+
+    .dz-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+        background-color: $charcoal;
+    }
+
+    .image-removal-link {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        
+        a {
+            font-weight: 900;
+            color: $warning;
+            cursor: pointer;
+        }
     }
 }
