@@ -1,48 +1,130 @@
-import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React, { Component } from 'react'
 
+import AboutIcon from '../about/about-icon'
 import AboutImg from '../../../static/assets/images/about/profile-img.jpg'
 
-export default function() {
-    return(
-        <div className="content-page-wrapper">
+export default class About extends Component {
+    constructor() {
+        super()
 
-            <div className="content-column">
+        this.state = {
+            tooltip: ""
+        }
 
-                <h2>Hi, I'm Jed</h2>
+        this.handleMouseEnter = this.handleMouseEnter.bind(this)
+        this.handleMouseLeave = this.handleMouseLeave.bind(this)
+    }
 
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat corporis blanditiis quibusdam, optio fuga accusantium natus ipsum minus tenetur reprehenderit corrupti! Qui quae provident eligendi distinctio voluptatem obcaecati? Delectus.</p>
+    handleMouseEnter(tooltip) {
+        this.setState({ tooltip: tooltip })
+    }
 
-                <p>Corporis ratione nisi tenetur porro, ipsa laboriosam ipsum eveniet, provident quisquam delectus voluptates dolorum tempora quam consequuntur, expedita obcaecati corrupti rerum nesciunt recusandae. Perspiciatis, delectus sint aspernatur quis sed neque!</p>
+    handleMouseLeave() {
+        this.setState({ tooltip: "" })
+    }
 
-                <p>Suscipit sint, unde magni harum vero eligendi dolore nisi tempore nobis assumenda facilis ipsam doloremque voluptatum tenetur molestias voluptas voluptatibus incidunt esse repudiandae perferendis iure odio rem a. Dolorem, unde!</p>
+    render() {
+        return(
+            <div className="content-page-wrapper">
 
-                <p>Quo officiis nemo minus veniam aliquid natus, eum voluptatibus quis expedita odit hic obcaecati atque dolor, labore illo sed perspiciatis aperiam in ipsa voluptates quos inventore saepe error! Ipsum, error.</p>
+                <div className="content-column">
 
-                <p>Similique illo est vitae unde esse beatae asperiores dignissimos, ipsam praesentium amet eos consequatur quod? Fugiat ipsam explicabo provident at commodi natus iusto adipisci obcaecati perferendis sint. Corrupti, ipsam? Doloribus.</p>
+                    <h2>Hi, I'm Jed</h2>
 
-                <div className="about-icons">
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'html5']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'css3-alt']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'js']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'react']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'python']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'git-alt']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'font-awesome-alt']} />
-                    <FontAwesomeIcon className="fa-icon" icon={['fab', 'invision']} />
+                    <h3>My Mission:</h3>
+                    <p>I seek to utilize and expand my programming skills by developing business solutions that improve processes and mitigate operational risk.</p>
+
+                    <h3>Experience:</h3>
+                    <ul>
+                        <li>Maintained an ETL built in Java using Spring Boot for the past 2 years. This ETL has run consistently with little to no downtime during this period.</li>
+                        <li>Built an application for business unit at Discover that identifies needed disciplinary action and notifies management. Also tracks disciplinary escalation. This application accounts for employee attendance, performance, and behavioral disciplinary needs. This application gained lots of traction and was adopted company-wide.</li>
+                        <li>Successfully migrated several applications from Cold Fusion to a microservice architecture using React and Spring Boot.</li>
+                        <li>Successfully updated applications from on-premises to cloud-based databases.</li>
+                    </ul>
+
+                    <div className="about-icons">
+
+                        <AboutIcon
+                             icon={['fab', 'html5']}
+                             tooltip='HTML5'
+                             handleMouseEnter={this.handleMouseEnter}
+                             handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fab', 'css3-alt']}
+                            tooltip='CSS3'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fab', 'js']}
+                            tooltip='JavaScript'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fab', 'react']}
+                            tooltip='React'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fab', 'python']}
+                            tooltip='Python'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fab', 'git-alt']}
+                            tooltip='Git'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fas', 'database']}
+                            tooltip='SQL Relational Databases'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fab', 'font-awesome-alt']}
+                            tooltip='Font Awesome'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                        <AboutIcon
+                            icon={['fab', 'invision']}
+                            tooltip='Invision Studio'
+                            handleMouseEnter={this.handleMouseEnter}
+                            handleMouseLeave={this.handleMouseLeave}
+                        />
+
+                    </div>
+
+                    <div className="about-icon-tooltip">
+                        <p>{this.state.tooltip}</p>
+                    </div>
+
                 </div>
 
+                <div
+                    className="image-column"
+                    style={{
+                        backgroundImage: `url(${AboutImg})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                    }}
+                />
+
             </div>
-
-            <div
-                className="image-column"
-                style={{
-                    backgroundImage: `url(${AboutImg})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center"
-                }}
-            />
-
-        </div>
-    )
+        )
+    }
 }
