@@ -1,47 +1,74 @@
 .portfolio-items-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 500px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 800px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 
     .portfolio-item-wrapper {
-        position: relative;
+        display: grid;
 
         .portfolio-img-background {
+            grid-area: 1/1;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 350px;
-            width: 100%;
+            height: 250px;
+            transition: 1s;
+
+            @media (min-width: 500px) {
+                height: 33vw;
+            }
+        }
+        
+        &:hover .portfolio-img-background {
+            filter: brightness(10%);
         }
 
         .img-text-wrapper {
-            position: absolute;
-            top: 0;
             display: flex;
+            align-items: center;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
             height: 100%;
-            text-align: center;
-            padding: 0px 100px 0px 100px;
+            grid-area: 1/1;
+            z-index: 1;
+            transition: 1s;
 
             .subtitle {
                 transition: 1s ease-in-out;
                 color: transparent;
+                font-size: 0;
+                font-weight: 600;
+                transition: 1s;
             }
         }
 
-        .img-text-wrapper:hover .subtitle {
+        &:hover .subtitle {
             color: $offwhite;
+            font-size: 1em;
+            padding: 25px;
+
+            @media (min-width: 800px) {
+                font-size: 1.3em;
+            }
+        }
+
+        .logo-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .logo-wrapper img {
-            width: 80%;
-            margin-bottom: 20px;
+            object-fit: contain;
+            max-width: 50%;
         }
     }
-}
-
-.image-blur {
-    transition: 1s;
-    filter: brightness(10%);
 }

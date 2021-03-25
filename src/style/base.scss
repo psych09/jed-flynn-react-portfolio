@@ -3,6 +3,10 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr;

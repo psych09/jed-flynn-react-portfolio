@@ -34,14 +34,6 @@ export default class About extends Component {
                     <h3>My Mission:</h3>
                     <p>I seek to utilize and expand my programming skills by developing business solutions that improve processes and mitigate operational risk.</p>
 
-                    <h3>Experience:</h3>
-                    <ul>
-                        <li>Maintained an ETL built in Java using Spring Boot for the past 2 years. This ETL has run consistently with little to no downtime during this period.</li>
-                        <li>Built an application for business unit at Discover that identifies needed disciplinary action and notifies management. Also tracks disciplinary escalation. This application accounts for employee attendance, performance, and behavioral disciplinary needs. This application gained lots of traction and was adopted company-wide.</li>
-                        <li>Successfully migrated several applications from Cold Fusion to a microservice architecture using React and Spring Boot.</li>
-                        <li>Successfully updated applications from on-premises to cloud-based databases.</li>
-                    </ul>
-
                     <div className="about-icons">
 
                         <AboutIcon
