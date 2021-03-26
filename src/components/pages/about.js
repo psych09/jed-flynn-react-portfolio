@@ -27,6 +27,15 @@ export default class About extends Component {
         return(
             <div className="content-page-wrapper">
 
+                <div
+                    className="image-column"
+                    style={{
+                        backgroundImage: `url(${AboutImg})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center"
+                    }}
+                />
+
                 <div className="content-column">
 
                     <h2>Hi, I'm Jed</h2>
@@ -107,14 +116,7 @@ export default class About extends Component {
 
                 </div>
 
-                <div
-                    className="image-column"
-                    style={{
-                        backgroundImage: `url(${AboutImg})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center"
-                    }}
-                />
+                
 
             </div>
         )

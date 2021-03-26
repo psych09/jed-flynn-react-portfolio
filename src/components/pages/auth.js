@@ -23,9 +23,9 @@ export default class Auth extends Component {
 
     render() {
         return(
-            <div className="auth-page-wrapper">
+            <div className="content-page-wrapper">
                 <div
-                    className="left-column"
+                    className="image-column"
                     style={{
                         backgroundImage: `url(${LoginImg})`
                     }}
@@ -33,7 +33,7 @@ export default class Auth extends Component {
                 />
 
 
-                <div className="right-column">
+                <div className="content-column">
                     <Login
                         handleSuccessfulAuth={this.handleSuccessfulAuth}
                         handleUnsuccessfulAuth={this.handleUnsuccessfulAuth}
