@@ -95,6 +95,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "immutable": "^3.8.2",
     "uglifyjs-webpack-plugin": "^1.2.7"
   }
 }
