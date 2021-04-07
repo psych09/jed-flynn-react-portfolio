@@ -29,7 +29,7 @@ const NavigationComponent = (props) => {
 
     return(
         <div className="nav-wrapper">
-            <div className="left-side">
+            <div className="left-side desktop-nav">
                 <div className="nav-link-wrapper">
                     <NavLink exact to="/" activeClassName="nav-link-active">Home</NavLink>
                 </div>
