@@ -1,11 +1,23 @@
 .nav-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
     .right-side {
         font-weight: 600;
         font-size: 1.1em;
+        order: 1;
+
+        @media (min-width: 600px) {
+            order: 2;
+        }
         
         a {
             margin-left: 15px;
@@ -20,6 +32,11 @@
 
     .left-side {
         display: flex;
+        order: 2;
+
+        @media (min-width: 600px) {
+            order: 1;
+        }
     }
 
     .nav-link-wrapper {
