@@ -13,12 +13,29 @@
         text-align: center;
         margin-top: 42px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+
+        .name {
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: 2s ease-in-out;
+
+            @media (min-width: 600px) {
+                font-size: 2em;
+            }
+        }
 
         .description {
-            width: 700px;
-            font-size: 2em;
+            width: 90%;
             margin-bottom: 50px;
+            transition: 2s ease-in-out;
+
+            @media (min-width: 600px) {
+                font-size: 1.5em;
+            }
         }
     }
 
@@ -27,6 +44,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 35px;
 
         .site-link {
             padding: 15px;

@@ -58,6 +58,7 @@ export default class PortfolioDetail extends Component {
                 </div>
 
                 <div className="portfolio-detail-description-wrapper">
+                    <div className="name">{name}</div>
                     <div className="description">{description}</div>
                 </div>
 

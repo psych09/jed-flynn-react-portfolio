@@ -14,13 +14,13 @@
         flex-direction: column;
         text-align: center;
         background-color: $offwhite;
-        padding: 50px;
+        padding: 20px;
     }
 
     .image-column {
         background-size: cover;
         height: 100vw;
-        transition: 1s ease-in-out;
+        // transition: 1s ease-in-out;
 
         @media (min-width: 400px) {
             height: 350px;
